@@ -3,38 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <title>na5hhub.online</title>
+  <meta name="description" content="Coming Soon for Personal Projects">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
-      background-size: 200% 200%;
-      animation: gradientMove 10s ease infinite;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
       overflow: hidden;
     }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: background 1s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    p {
+      font-size: 1.5em;
+      margin-top: 0.5em;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Coming Soon</h1>
+    <p>for Personal Projects</p>
+  </div>
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+  <script>
+    const images = [
+      'https://source.unsplash.com/1920x1080/?nature,forest',
+      'https://source.unsplash.com/1920x1080/?nature,mountain',
+      'https://source.unsplash.com/1920x1080/?nature,river',
+      'https://source.unsplash.com/1920x1080/?nature,beach',
+      'https://source.unsplash.com/1920x1080/?nature,sunset',
+      'https://source.unsplash.com/1920x1080/?nature,lake',
+      'https://source.unsplash.com/1920x1080/?nature,trees'
+    ];
+
+    function changeBackground() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      document.body.style.backgroundImage = `url('${images[randomIndex]}')`;
     }
 
-    .container {
+    changeBackground(); // initial background
+    setInterval(changeBackground, 20000); // change every 20 seconds
+  </script>
+</body>
+</html>    .container {
       text-align: center;
       padding: 50px 30px;
       width: 90%;
